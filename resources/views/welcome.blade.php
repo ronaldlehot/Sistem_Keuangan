@@ -19,19 +19,19 @@
             </style>
         @endif
     </head>
-   <body>
+<body class="antialiased bg-gray-100 dark:bg-gray-900">
     <div class="min-h-screen flex items-center justify-center bg-gradient-to-b from-transparent via-white to-white dark:bg-gradient-to-b dark:from-transparent dark:via-zinc-900 dark:to-zinc-900">
-        <div class="max-w-2xl w-full p-6 bg-white dark:bg-zinc-900 rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105">
-            <h1 class="text-3xl font-semibold text-center text-black dark:text-white animate-pulse">Selamat Datang Sitem Keuangan Anda</h1>
-            <p class="mt-4 text-center text-sm text-black dark:text-white/70">
+        <div class="max-w-2xl w-full p-8 bg-white dark:bg-zinc-800 rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105">
+            <h1 class="text-4xl font-bold text-center text-black dark:text-white animate-pulse">Selamat Datang di Sistem Keuangan Anda</h1>
+            <p class="mt-4 text-center text-lg text-gray-700 dark:text-gray-300">
                 Kelola keuangan Anda secara efisien dan efektif dengan sistem manajemen keuangan kami yang fleksibel.
             </p>
-            <div class="mt-6 flex justify-center">
-                <a href="{{ route('filament.admin.auth.login') }}" class="px-6 py-2 text-white bg-gradient-to-r from-blue-500 to-green-500 rounded-md hover:bg-gradient-to-l hover:from-green-500 hover:to-blue-500 transition duration-300 transform hover:scale-110">
+            <div class="mt-8 flex justify-center">
+                <a href="{{ route('filament.admin.auth.login') }}" class="px-8 py-3 text-lg font-semibold text-white bg-gradient-to-r from-blue-500 to-green-500 rounded-full hover:bg-gradient-to-l hover:from-green-500 hover:to-blue-500 transition duration-300 transform hover:scale-110">
                     Go to Login
                 </a>
             </div>
         </div>
     </div>
-   </body>
+</body>
 </html>
