@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
             $table->string('name');
-            $table->date('date_trasanction');
+            $table->date('date_transaction');
             $table->integer('amount');
             $table->text('notes')->nullable();
             $table->text('image')->nullable();

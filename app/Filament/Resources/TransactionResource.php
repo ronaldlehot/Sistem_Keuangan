@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Tables\Columns\TextColumn;
 
 class TransactionResource extends Resource
 {
@@ -40,8 +41,8 @@ class TransactionResource extends Resource
                     ->required(),
                 Forms\Components\FileUpload::make('image')
                     ->image(),
-                 
-                    
+
+
             ]);
     }
 
@@ -49,12 +50,18 @@ class TransactionResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')
-                    ->searchable(),
+                Tables\Columns\ImageColumn::make('category.image')
+                    ->label('Image'),
                 Tables\Columns\IconColumn::make('category.is_expense')
+                    ->label('Type of Transaction')
                     ->boolean()
+                    ->trueIcon('heroicon-s-arrow-up-on-square')
+                    ->trueColor('danger')
+                    ->falseIcon('heroicon-s-arrow-down-on-square')
+                    ->falseColor('success')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('category.name')
+                    ->description(fn(transaction $record): string => $record->name, position: 'above')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('date_transaction')
@@ -62,11 +69,11 @@ class TransactionResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('amount')
                     ->numeric()
+                    ->money('IDR', locale: 'id')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('notes')
                     ->wrap()
                     ->words(3),
-                Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
