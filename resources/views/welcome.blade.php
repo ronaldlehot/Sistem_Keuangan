@@ -33,5 +33,19 @@
             </div>
         </div>
     </div>
+    {{-- <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+        @php
+            $pemasukan = \App\Models\Transaction::incomes()->sum('amount');
+            $pengeluaran = \App\Models\Transaction::expenses()->sum('amount');
+        @endphp
+        <div class="p-6 bg-white dark:bg-zinc-800 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-semibold text-black dark:text-white">Penghasilan</h2>
+            <p class="mt-4 text-lg text-gray-700 dark:text-gray-300">Rp {{ number_format($pemasukan) }}</p>
+        </div>
+        <div class="p-6 bg-white dark:bg-zinc-800 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-semibold text-black dark:text-white">Pengeluaran</h2>
+            <p class="mt-4 text-lg text-gray-700 dark:text-gray-300">Rp {{ number_format($pengeluaran) }}</p>
+        </div>
+    </div> --}}
 </body>
 </html>

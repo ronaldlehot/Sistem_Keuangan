@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use Afsakar\FilamentOtpLogin\FilamentOtpLoginPlugin;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -17,16 +18,31 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use function asset;
 
 class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
+
+        // return $panel
+        // ->plugins([
+        //     FilamentOtpLoginPlugin::make(),
+        // ]);
+
+
         return $panel
             ->default()
+            ->brandName('Sistem Keuangan')
             ->id('admin')
             ->path('admin')
+            ->registration()
+            ->passwordReset()
+            ->emailVerification()
+            ->Profile()
             ->login()
+            
+            
             ->colors([
                 'primary' => Color::Amber,
             ])

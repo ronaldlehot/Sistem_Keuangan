@@ -73,7 +73,7 @@ class TransactionResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('notes')
                     ->wrap()
-                    ->words(3),
+                    ->words(2),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
